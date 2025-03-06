@@ -1,15 +1,9 @@
+
 /**
- * This class implements a technical support system. It is the top level class 
- * in this project. The support system communicates via text input/output 
- * in the text terminal.
- * 
- * This class uses an object of class InputReader to read input from the user,
- * and an object of class Responder to generate responses. It contains a loop
- * that repeatedly reads input and generates output until the users wants to 
- * leave.
- * 
- * @author     Michael Kölling and David J. Barnes
- * @version    0.1 (2016.02.29)
+ * Lab 5 Questions
+ * 12.java.util package, it generates random numbers, construct an instance by 
+ * creating a random number generator, generates a stream of random numbers 
+ * using a seed of 48-bits.
  */
 public class SupportSystem
 {
@@ -38,8 +32,10 @@ public class SupportSystem
 
         while(!finished) {
             String input = reader.getInput();
-
-            if(input.startsWith("bye")) {
+            //Question 8,9 & 11 Lab 5
+            input= input.trim();
+            input= input.toLowerCase();
+            if(input.equals("bye")) {
                 finished = true;
             }
             else {
