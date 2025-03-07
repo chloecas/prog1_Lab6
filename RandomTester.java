@@ -28,6 +28,11 @@ public class RandomTester
     {
        rand= new Random();
        responses = new ArrayList<>();
+       
+       responses.add("yes");
+       responses.add("no");
+       responses.add("who knows");
+       responses.add("no idea");
     }
 
     /**
@@ -65,7 +70,7 @@ public class RandomTester
         int i=0;
         while(i< howmany) {
             int randomNumber=rand.nextInt();
-            System.out.println(randomNumber);
+            printOneRandom();
             i++;
         }
     }
@@ -79,15 +84,11 @@ public class RandomTester
     }
     
     /**
-     * Question 17 Lab 
+     * Question 17+18 Lab 
     */
-     public String getResponse()
+     public String getBetterResponse()
     { 
-        String[] responses = {"yes", "no", "maybe"};
-        int randomIndex= rand.nextInt(responses.length);
-        return responses[randomIndex];
-        
+        int index= rand.nextInt(responses.size());
+        return responses.get(index);
     }
 }
-
-    
