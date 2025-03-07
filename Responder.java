@@ -41,12 +41,19 @@ public class Responder
         fillResponsesMap("system", "What is your system configuration?");
     }
 
+    private String pickDefaultResponse() {
+        return "No idea, sorry";
+    }
+
     /**
      * Question 33
      */
     public String generateResponse(String word)
     {
         String answer = betterResponses.get(word);
+        if(answer==null){
+            answer = pickDefaultResponse();
+        }
         return answer;
     }
     
