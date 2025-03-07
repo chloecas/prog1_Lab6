@@ -25,6 +25,10 @@ public class MapTester
     public MapTester()
     {
         contacts= new HashMap<>();
+
+        enterNumber("Chloe Castrataro", "(555) 555 5555");
+        enterNumber("Connor Castrataro", "(444) 444 4444");
+        enterNumber("Leslie Lockhart", "(333) 333 3333");        
     }
 
     /**
@@ -32,9 +36,7 @@ public class MapTester
      */
     public void enterNumber(String name, String number)
     {
-        contacts.put("Chloe Castrataro", "(555) 555 5555");
-        contacts.put("Connor Castrataro", "(444) 444 4444");
-        contacts.put("Leslie Lockhart", "(333) 333 3333");
+        contacts.put(name, number);
     }
     
      /**
@@ -46,8 +48,4 @@ public class MapTester
         return number;
     }
     
-    public void fillResponsesMap()
-    {
-        
-    }
 }
