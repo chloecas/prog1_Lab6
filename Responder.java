@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.HashMap;
+import java.util.HashSet;
 /**
  * Question 22 Lab 5
  * Question 23: it does still work even if we change the amount of responses 
@@ -15,7 +16,8 @@ import java.util.HashMap;
  * maintains the order and allows duplicates. HashSets are backed by HashMaps so 
  * elements are kept in a table.
  * 
- * Question 39.
+ * Question 39. Organizing every input word in the HashSet of Strings called 
+ * words into an array so they can be accessed and reviewed separately. 
  */
 public class Responder
 {
@@ -48,13 +50,16 @@ public class Responder
     /**
      * Question 33
      */
-    public String generateResponse(String word)
-    {
-        String answer = betterResponses.get(word);
-        if(answer==null){
-            answer = pickDefaultResponse();
+    public String generateResponse(HashSet<String> words)
+    {   //Question 42 Lab 5
+        for(String word: words) {
+            String response= betterResponses.get(word);
+            if(response != null) {
+                return response;
+            }
         }
-        return answer;
+        
+        return pickDefaultResponse();
     }
     
     /** no longer needed 

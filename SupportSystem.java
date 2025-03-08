@@ -1,4 +1,4 @@
-
+import java.util.HashSet;
 /**
  * Lab 5 Questions
  * 12.java.util package, it generates random numbers, construct an instance by 
@@ -9,6 +9,7 @@ public class SupportSystem
 {
     private InputReader reader;
     private Responder responder;
+    private HashSet<String> words;
     
     /**
      * Creates a technical support system.
@@ -17,6 +18,7 @@ public class SupportSystem
     {
         reader = new InputReader();
         responder = new Responder();
+        words = new HashSet<>();
     }
 
     /**
@@ -31,11 +33,12 @@ public class SupportSystem
         printWelcome();
 
         while(!finished) {
-            String input = reader.getInput();
+            //Question 42 Lab 5
+            HashSet<String> input = reader.getInput();
             //Question 8,9 & 11 Lab 5
-            input= input.trim();
-            input= input.toLowerCase();
-            if(input.equals("bye")) {
+            //input= input.trim();
+            //input= input.toLowerCase();
+            if(input.contains("bye")) {
                 finished = true;
             }
             else {
